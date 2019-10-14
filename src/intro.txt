@@ -1,0 +1,18 @@
+Redux Thunk is a middleware used (mainly) to make asynchronous api calls
+
+Why is this not so straightforward in React?
+
+The answer is STATE.
+
+1. STATE (before call)
+2. STATE (during call)
+3. STATE (answer received)
+
+Generally, for any API request you want to dispatch at 
+least 2 different kinds of actions ...
+
+1. An action informing the reducers that the request has begun 
+
+2. An action informing the reducers that the request finished successfully
+
+Thunk allows us to return function instead of objects as an action
