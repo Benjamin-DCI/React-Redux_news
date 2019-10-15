@@ -21,8 +21,9 @@ export const receivedPosts = json => ({
 export function fetchPosts(channel) {
 	return function(dispatch) {
 		dispatch(requestPosts());
-		return fetch(`https://newsapi.org/v1/articles?
-        source=${channel}&apiKey=${MY_API_KEY}`)
+		return fetch(
+			`https://newsapi.org/v1/articles?source=${channel}&apiKey=${MY_API_KEY}`
+		)
 			.then(
 				response => response.json(),
 				error => console.log("An error occured", error)
